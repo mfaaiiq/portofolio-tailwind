@@ -61,8 +61,22 @@ darkToggle.addEventListener('click', function() {
 
 // Switch Position of Toggle to 
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    darkToggle.checked = true;
-  } else {
-    darkToggle.checked = false;
-  }
+// if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+//     darkToggle.checked = true;
+//   } else {
+//     darkToggle.checked = false;
+//   }
+
+// Cek apakah tema gelap disetel di localStorage atau jika tema gelap dipilih berdasarkan preferensi pengguna
+// if (localStorage.theme === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+//     darkToggle.checked = true; // Menandai kotak centang jika tema gelap aktif
+//   } else {
+//     darkToggle.checked = false; // Jika tidak, jangan centang kotak
+//   }
+  
+
+if (localStorage.theme = 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+} else {
+    document.documentElement.classList.remove('dark')
+}
