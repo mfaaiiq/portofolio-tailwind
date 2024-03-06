@@ -9,14 +9,21 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      </script>
 </head>
 <body>
 
 
     <!-- Header Start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10  navbar-fixed">
         <div class="container">
-            <div class="flex items-center  justify-between relative">
+            <div class="flex items-center  justify-between relative ">
                 <div class="px-4">
                     <a href="#home" class="font-bold text-lg text-primary block py-6">Muhamad Nur Faiq</a>
                 </div>
@@ -28,7 +35,7 @@
                     </button>
 
                     <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-slate-800 dark:shadow-slate-700 lg:dark:bg-transparent">
-                        <ul class="block lg:flex">
+                        <ul class="block lg:flex" >
                             <li class="group">
                                 <a href="#home" class="text-base text-blue-800 py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
                             </li>
@@ -53,11 +60,11 @@
                             <li class="flex items-center pl-8 mt-3 lg:mt-0">
                                 <div class="flex">
                                     <span class="mr-2 text-sm text-slate-500">light</span>
-                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <input type="checkbox" class="hidden" id="dark-toggle" />
                                     <label for="dark-toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
-                                        </div>
+                                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                                    </div>
                                     </label>
                                     <span class="ml-2 text-sm text-slate-500">dark</span>
                                 </div>
@@ -424,9 +431,9 @@
     <!-- Footer Section END -->
 
     <!-- Back to Top START -->
-    <a href="#home" id="to-top" class="h-14 w-14 bg-primary hidden justify-center items-center rounded-full fixed z-[99999999] bottom-4 right-4 p-4 hover:animate-pulse">
-        <span class="block h-5 w-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
-    </a>
+    <a href="#home" class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse" id="to-top">
+        <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+      </a>
     <!-- Back to Top END -->
 
 
